@@ -6,8 +6,10 @@
   position: relative;
   opacity: 1;
   height: auto;
+  min-height: 100vh;
   width: var(--cWidth);
   margin: auto;
+  padding: 120px 0;
 }
 .about-me {
   padding: 40px 0px;
@@ -17,18 +19,18 @@
   text-align: center;
 }
 .about-me h3 {
-  font-size: 18px;
+  font-size: 22px;
   text-transform: uppercase;
-  letter-spacing: 4px;
+  letter-spacing: 6px;
   font-weight: 400;
   color: var(--accentColor);
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 
 .about-me p {
-  font-size: clamp(18px, 5vw, 20px);
+  font-size: clamp(22px, 5.5vw, 25px);
   font-weight: 600;
-  line-height: 26px;
+  line-height: 34px;
   letter-spacing: 0.5px;
   word-spacing: 2px;
 }
@@ -66,30 +68,31 @@
     justify-content: center;
   }
   .about-me {
-    width: 500px;
+    width: 600px;
+    max-width: calc(100% - 30px);
   }
   .about-me h3 {
-    font-size: 22px;
-    letter-spacing: 6px;
+    font-size: 26px;
+    letter-spacing: 7px;
   }
   .about-me p {
-    font-size: 28px;
-    line-height: 32px;
+    font-size: 32px;
+    line-height: 40px;
   }
 }
 @media only screen and (min-width: 768px) {
   .about-me {
-    width: 500px;
+    width: 700px;
     max-width: calc(100% - 70px);
     transform: translateY(0%);
   }
   .about-me h3 {
-    font-size: 25px;
-    letter-spacing: 7px;
+    font-size: 30px;
+    letter-spacing: 8px;
   }
   .about-me p {
-    font-size: 33px;
-    line-height: 36px;
+    font-size: 38px;
+    line-height: 46px;
   }
   .about-section {
     opacity: 1;
@@ -100,18 +103,23 @@
     width: var(--cWidth);
     justify-content: center;
     max-width: 1920px;
-    height: var(--vh);
-    padding: 0px;
+    min-height: 130vh;
+    height: auto;
+    padding: 15vh 0;
     opacity: 1;
   }
   .about-me {
     padding: 0px;
     width: 100%;
-    max-width: 850px;
+    max-width: 950px;
+  }
+  .about-me h3 {
+    font-size: 34px;
+    letter-spacing: 9px;
   }
   .about-me p {
-    font-size: 1.9vw;
-    line-height: 2.3vw;
+    font-size: 2.5vw;
+    line-height: 3.1vw;
   }
 }
 @media only screen and (min-width: 1950px) {
