@@ -1,0 +1,157 @@
+.myworks-page {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 12% 8%, rgba(47, 128, 255, 0.2), transparent 30%),
+    radial-gradient(circle at 88% 30%, rgba(255, 54, 93, 0.16), transparent 32%),
+    linear-gradient(135deg, #050914, #08162f 48%, #050914);
+  padding: 80px 40px;
+  box-sizing: border-box;
+}
+
+.myworks-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.back-button {
+  display: inline-block;
+  color: var(--accentColor);
+  text-decoration: none;
+  font-size: 16px;
+  margin-bottom: 30px;
+  transition: all 0.3s ease;
+  padding: 10px 20px;
+  border: 1px solid var(--accentColor);
+  border-radius: 30px;
+}
+
+.back-button:hover {
+  background: linear-gradient(135deg, var(--accentColor), var(--blueColor));
+  color: #fff;
+}
+
+.myworks-header h1 {
+  font-size: 70px;
+  font-weight: 500;
+  margin-bottom: 15px;
+  color: #fff;
+}
+
+.myworks-header h1 span {
+  color: var(--accentColor);
+}
+
+.myworks-header p {
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.myworks-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(350px, 100%), 1fr));
+  gap: 30px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.myworks-card {
+  background: rgba(10, 22, 48, 0.58);
+  border: 1px solid var(--lineColor);
+  border-radius: 15px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.myworks-card:hover {
+  transform: translateY(-10px);
+  border-color: var(--accentColor);
+  box-shadow: 0 20px 44px rgba(47, 128, 255, 0.24), 0 0 18px rgba(255, 54, 93, 0.16);
+}
+
+.myworks-card-number {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  font-size: 14px;
+  color: var(--accentColor);
+  font-weight: 600;
+  background: rgba(5, 9, 20, 0.72);
+  padding: 5px 12px;
+  border-radius: 20px;
+  z-index: 1;
+}
+
+.myworks-card-image {
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+}
+
+.myworks-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.myworks-card:hover .myworks-card-image img {
+  transform: scale(1.05);
+}
+
+.myworks-card-info {
+  padding: 25px;
+}
+
+.myworks-card-info h3 {
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 8px;
+  color: #fff;
+}
+
+.myworks-card-category {
+  font-size: 14px;
+  color: var(--accentColor);
+  margin-bottom: 12px;
+}
+
+.myworks-card-description {
+  font-size: 14px;
+  color: var(--mutedText);
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.myworks-card-tech {
+  font-size: 13px;
+  color: rgba(248, 251, 255, 0.52);
+  line-height: 1.5;
+}
+
+/* Responsive */
+@media only screen and (max-width: 768px) {
+  .myworks-page {
+    padding: 60px clamp(14px, 5vw, 20px);
+  }
+
+  .myworks-header h1 {
+    font-size: clamp(40px, 13vw, 56px);
+  }
+
+  .myworks-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media only screen and (max-width: 420px) {
+  .back-button {
+    width: 100%;
+    text-align: center;
+    border-radius: 8px;
+  }
+
+  .myworks-card-info {
+    padding: 18px;
+  }
+}
