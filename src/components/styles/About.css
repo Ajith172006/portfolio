@@ -14,6 +14,7 @@
   padding-bottom: 0;
   width: 100%;
   max-width: calc(100% - 15px);
+  text-align: center;
 }
 .about-me h3 {
   font-size: 18px;
@@ -97,7 +98,7 @@
 @media only screen and (min-width: 1025px) {
   .about-section {
     width: var(--cWidth);
-    justify-content: right;
+    justify-content: center;
     max-width: 1920px;
     height: var(--vh);
     padding: 0px;
@@ -105,7 +106,8 @@
   }
   .about-me {
     padding: 0px;
-    width: 50%;
+    width: 100%;
+    max-width: 850px;
   }
   .about-me p {
     font-size: 1.9vw;

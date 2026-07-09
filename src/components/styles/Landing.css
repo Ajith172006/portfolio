@@ -577,25 +577,25 @@ h2.landing-info-h2 {
   }
 
   .landing-intro h2 {
-    font-size: 25px;
+    font-size: 28px;
   }
 
   .landing-intro h1 {
-    font-size: 40px;
-    line-height: 35px;
+    font-size: 48px;
+    line-height: 44px;
   }
 
   .landing-info h3 {
-    font-size: 25px;
+    font-size: 28px;
   }
 
   .landing-info h2 {
-    font-size: 45px;
-    line-height: 42px;
+    font-size: 50px;
+    line-height: 48px;
   }
 
   h2.landing-info-h2 {
-    font-size: 55px;
+    font-size: 60px;
   }
 }
 
@@ -627,6 +627,28 @@ h2.landing-info-h2 {
     transform: translate(0%, -50%);
     right: auto;
     left: 66%;
+  }
+
+  .landing-intro h2 {
+    font-size: 32px;
+  }
+
+  .landing-intro h1 {
+    font-size: 68px;
+    line-height: 62px;
+  }
+
+  .landing-info h3 {
+    font-size: 32px;
+  }
+
+  .landing-info h2 {
+    font-size: 60px;
+    line-height: 56px;
+  }
+
+  h2.landing-info-h2 {
+    font-size: 72px;
   }
 }
 
@@ -661,29 +683,51 @@ h2.landing-info-h2 {
     right: auto;
     left: 70%;
   }
+
+  .landing-intro h2 {
+    font-size: 34px;
+  }
+
+  .landing-intro h1 {
+    font-size: 78px;
+    line-height: 70px;
+  }
+
+  .landing-info h3 {
+    font-size: 34px;
+  }
+
+  .landing-info h2 {
+    font-size: 68px;
+    line-height: 64px;
+  }
+
+  h2.landing-info-h2 {
+    font-size: 80px;
+  }
 }
 
 @media screen and (min-width: 1600px) {
   .landing-intro h2 {
-    font-size: 35px;
+    font-size: 38px;
   }
 
   .landing-intro h1 {
-    font-size: 60px;
-    line-height: 55px;
+    font-size: 90px;
+    line-height: 84px;
   }
 
   .landing-info h3 {
-    font-size: 35px;
+    font-size: 38px;
   }
 
   .landing-info h2 {
-    font-size: 65px;
-    line-height: 62px;
+    font-size: 78px;
+    line-height: 72px;
   }
 
   h2.landing-info-h2 {
-    font-size: 75px;
+    font-size: 92px;
   }
 }
 
