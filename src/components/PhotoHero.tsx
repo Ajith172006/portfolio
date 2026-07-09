@@ -32,60 +32,34 @@ const PhotoHero = () => {
     window.addEventListener("mousemove", handleGlobalMouseMove);
     document.addEventListener("mouseleave", handleGlobalMouseLeave);
 
-    // Replicate the original 3D character scroll animation timeline for the photo container
+    // Fade out and scale down the photo container as we scroll away from the landing section
     const container = el.closest(".photo-hero-container");
-    let tl1: gsap.core.Timeline | null = null;
-    let tl2: gsap.core.Timeline | null = null;
-    let tl3: gsap.core.Timeline | null = null;
+    let scrollTimeline: gsap.core.Timeline | null = null;
 
     if (container) {
-      tl1 = gsap.timeline({
+      scrollTimeline = gsap.timeline({
         scrollTrigger: {
           trigger: ".landing-section",
           start: "top top",
-          end: "bottom top",
+          end: "bottom 30%",
           scrub: true,
           invalidateOnRefresh: true,
         },
       });
 
-      tl2 = gsap.timeline({
-        scrollTrigger: {
-          trigger: ".about-section",
-          start: "center 55%",
-          end: "bottom top",
-          scrub: true,
-          invalidateOnRefresh: true,
-        },
+      scrollTimeline.to(container, {
+        opacity: 0,
+        scale: 0.85,
+        y: 50,
+        ease: "power1.inOut"
       });
-
-      tl3 = gsap.timeline({
-        scrollTrigger: {
-          trigger: ".whatIDO",
-          start: "top top",
-          end: "bottom top",
-          scrub: true,
-          invalidateOnRefresh: true,
-        },
-      });
-
-      // Animate the container x/y coordinates to mirror the 3D scroll movement
-      tl1.to(container, { x: "-25vw", duration: 1 }, 0);
-
-      tl2
-        .to(container, { x: "-12vw", delay: 2, duration: 5 }, 0)
-        .to(container.querySelector(".character-rim"), { opacity: 0, scale: 0, y: "-70%", duration: 5, delay: 2 }, 0.3);
-
-      tl3.to(container, { y: "-100vh", duration: 4, ease: "none", delay: 1 }, 0);
     }
 
     return () => {
       window.removeEventListener("mousemove", handleGlobalMouseMove);
       document.removeEventListener("mouseleave", handleGlobalMouseLeave);
       
-      tl1?.kill();
-      tl2?.kill();
-      tl3?.kill();
+      scrollTimeline?.kill();
     };
   }, []);
 

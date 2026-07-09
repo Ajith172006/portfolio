@@ -403,6 +403,33 @@
   -webkit-mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
   mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
   margin-bottom: 0;
+  
+  /* Initial state before entry animation */
+  opacity: 0;
+  transform: scale(0.9) translateY(40px);
+  
+  /* Premium entry & continuous floating animations */
+  animation: photoHeroEntry 1.4s cubic-bezier(0.16, 1, 0.3, 1) forwards,
+             photoHeroFloat 6s ease-in-out infinite 1.4s;
+}
+
+@keyframes photoHeroEntry {
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes photoHeroFloat {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
 }
 
 @media screen and (min-width: 769px) and (max-width: 1024px) {
