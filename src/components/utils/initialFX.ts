@@ -1,6 +1,9 @@
 import { TextSplitter } from "../../utils/textSplitter";
 import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { lenis } from "../Navbar";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export function initialFX() {
   document.body.style.overflowY = "auto";
@@ -72,6 +75,23 @@ export function initialFX() {
       duration: 1.2,
       ease: "power1.inOut",
       delay: 0.1,
+    }
+  );
+
+  // Mobile photo scroll fade-out and scale down
+  gsap.fromTo(
+    ".mobile-photo",
+    { opacity: 1, scale: 1, y: 0 },
+    {
+      opacity: 0,
+      scale: 0.85,
+      y: 40,
+      scrollTrigger: {
+        trigger: ".landing-section",
+        start: "top top",
+        end: "bottom 30%",
+        scrub: true,
+      },
     }
   );
 }

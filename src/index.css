@@ -165,6 +165,18 @@ svg {
   flex-wrap: nowrap;
 }
 
+.split-char {
+  display: inline-block;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+}
+
+.split-word {
+  display: inline-block;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+}
+
 .techstack {
   width: 100%;
   position: relative;

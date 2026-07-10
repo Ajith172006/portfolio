@@ -17,10 +17,9 @@ import { useLoading } from "../context/LoadingProvider";
 const MainContainer = () => {
   const { completeLoading } = useLoading();
 
-  const [isDesktopView, setIsDesktopView] = useState<boolean>(
-    window.innerWidth > 1024
-  );
-  const [isMobile] = useState<boolean>(window.innerWidth <= 768);
+  const [windowWidth, setWindowWidth] = useState<number>(window.innerWidth);
+  const isDesktopView = windowWidth > 1024;
+  const isMobile = windowWidth <= 768;
 
   // No 3D model – complete loading immediately so the intro screen plays through
   useEffect(() => {
@@ -29,20 +28,25 @@ const MainContainer = () => {
 
   useEffect(() => {
     const resizeHandler = () => {
+      setWindowWidth(window.innerWidth);
       setSplitText();
-      setIsDesktopView(window.innerWidth > 1024);
     };
     resizeHandler();
     window.addEventListener("resize", resizeHandler);
     return () => {
       window.removeEventListener("resize", resizeHandler);
     };
-  }, [isDesktopView]);
+  }, []);
 
   useEffect(() => {
     import("./utils/initialFX").then((module) => {
       if (module.initialFX) {
         module.initialFX();
+      }
+    });
+    import("./utils/GsapScroll").then((module) => {
+      if (module.setAllTimeline) {
+        module.setAllTimeline();
       }
     });
   }, []);

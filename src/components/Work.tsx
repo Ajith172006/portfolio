@@ -11,8 +11,30 @@ gsap.registerPlugin(ScrollTrigger);
 const Work = () => {
   const { portfolio } = usePortfolio();
   useEffect(() => {
-    // Disable pinning on mobile to allow scrolling
-    if (window.innerWidth <= 768) return;
+    // Disable pinning on mobile, but apply entrance animations for work cards
+    if (window.innerWidth <= 768) {
+      const boxes = gsap.utils.toArray(".work-box");
+      const ctx = gsap.context(() => {
+        boxes.forEach((box: any) => {
+          gsap.fromTo(
+            box,
+            { opacity: 0, y: 50 },
+            {
+              opacity: 1,
+              y: 0,
+              duration: 0.8,
+              ease: "power2.out",
+              scrollTrigger: {
+                trigger: box,
+                start: "top 88%",
+                toggleActions: "play none none reverse",
+              },
+            }
+          );
+        });
+      });
+      return () => ctx.revert();
+    }
 
     let translateX: number = 0;
 
