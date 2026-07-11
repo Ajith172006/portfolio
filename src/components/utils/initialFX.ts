@@ -17,56 +17,47 @@ export function initialFX() {
     delay: 1,
   });
 
-  const selectors = [".landing-info h3", ".landing-intro h2", ".landing-intro h1"];
+  const selectors = [
+    ".hello-tag",
+    ".im-tag",
+    ".a-tag",
+    ".name-title",
+    ".role-title"
+  ];
   const elements = selectors.flatMap(selector => Array.from(document.querySelectorAll(selector)));
   const landingText = new TextSplitter(elements, {
     type: "chars,lines",
     linesClass: "split-line",
   });
+  
   gsap.fromTo(
     landingText.chars,
-    { opacity: 0, y: 80, filter: "blur(5px)" },
+    { opacity: 0, y: 50, filter: "blur(5px)" },
     {
       opacity: 1,
-      duration: 1.2,
+      duration: 1,
       filter: "blur(0px)",
-      ease: "power3.inOut",
+      ease: "power3.out",
       y: 0,
-      stagger: 0.025,
-      delay: 0.3,
+      stagger: 0.015,
+      delay: 0.2,
     }
   );
 
-  const TextProps = { type: "chars,lines", linesClass: "split-h2" };
-
-  const landingText2 = new TextSplitter(".landing-h2-info", TextProps);
-  const landingText4 = new TextSplitter(".landing-h2-1", TextProps);
-
+  // Animate description paragraphs, socials, and call-to-actions
   gsap.fromTo(
-    [...landingText2.chars, ...landingText4.chars],
-    { opacity: 0, y: 80, filter: "blur(5px)" },
+    [".landing-desc", ".landing-socials", ".landing-ctas"],
+    { opacity: 0, y: 25 },
     {
       opacity: 1,
-      duration: 1.2,
-      filter: "blur(0px)",
-      ease: "power3.inOut",
+      duration: 1,
+      ease: "power2.out",
       y: 0,
-      stagger: 0.025,
-      delay: 0.3,
+      stagger: 0.15,
+      delay: 0.6,
     }
   );
 
-  gsap.fromTo(
-    ".landing-info-h2",
-    { opacity: 0, y: 30 },
-    {
-      opacity: 1,
-      duration: 1.2,
-      ease: "power1.inOut",
-      y: 0,
-      delay: 0.8,
-    }
-  );
   gsap.fromTo(
     [".header", ".icons-section", ".nav-fade"],
     { opacity: 0 },

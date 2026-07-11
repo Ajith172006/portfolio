@@ -113,49 +113,52 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 55px;
-  height: 68px;
-  padding: 8px;
-  border-radius: 10px;
-  background: var(--panelColor);
-  border: 1px solid var(--lineColor);
+  width: 95px;
+  height: 105px;
+  padding: 12px;
+  border-radius: 14px;
+  background: rgba(10, 22, 48, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   text-decoration: none;
   cursor: pointer;
 }
 
 .techstack-item:hover {
-  transform: translateY(-6px) scale(1.08);
-  background: rgba(47, 128, 255, 0.18);
-  border-color: var(--blueColor);
-  box-shadow: 0 8px 32px rgba(47, 128, 255, 0.32), 0 0 20px rgba(255, 54, 93, 0.2);
+  transform: translateY(-8px) scale(1.08);
+  background: rgba(10, 22, 48, 0.7);
+  border-color: var(--accentColor);
+  box-shadow: 0 12px 40px rgba(255, 54, 93, 0.25), 0 0 25px rgba(47, 128, 255, 0.15);
 }
 
 .techstack-item img {
-  width: 30px;
-  height: 30px;
+  width: 44px;
+  height: 44px;
   object-fit: contain;
-  filter: grayscale(100%) contrast(1.2) brightness(1.5);
+  filter: grayscale(80%) brightness(1.2);
   opacity: 0.85;
-  transition: filter 0.3s ease, opacity 0.3s ease;
+  transition: filter 0.4s ease, opacity 0.4s ease, transform 0.4s ease;
 }
 
 .techstack-item:hover img {
   filter: none;
   opacity: 1;
+  transform: scale(1.1);
 }
 
 .techstack-item span {
-  font-size: 9px;
+  font-size: 11px;
+  font-weight: 500;
   color: var(--mutedText);
-  margin-top: 5px;
+  margin-top: 10px;
   text-align: center;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  max-width: 50px;
+  max-width: 80px;
+  transition: color 0.3s ease;
 }
 
 .techstack-item:hover span {
@@ -169,17 +172,18 @@
   }
   
   .techstack-item {
-    width: 50px;
-    height: 62px;
+    width: 85px;
+    height: 95px;
   }
   
   .techstack-item img {
-    width: 26px;
-    height: 26px;
+    width: 38px;
+    height: 38px;
   }
   
   .techstack-item span {
-    font-size: 8px;
+    font-size: 10px;
+    max-width: 70px;
   }
 }
 
@@ -190,27 +194,27 @@
   }
   
   .techstack-pyramid {
-    gap: 8px;
+    gap: 10px;
   }
   
   .techstack-row {
-    gap: 8px;
+    gap: 10px;
   }
   
   .techstack-item {
-    width: 45px;
-    height: 56px;
-    padding: 6px;
+    width: 75px;
+    height: 85px;
+    padding: 10px;
   }
   
   .techstack-item img {
-    width: 22px;
-    height: 22px;
+    width: 32px;
+    height: 32px;
   }
   
   .techstack-item span {
-    font-size: 7px;
-    max-width: 42px;
+    font-size: 9px;
+    max-width: 60px;
   }
 }
 
@@ -220,29 +224,29 @@
   }
   
   .techstack-pyramid {
-    gap: 6px;
+    gap: 8px;
   }
   
   .techstack-row {
-    gap: 6px;
+    gap: 8px;
   }
   
   .techstack-item {
-    width: clamp(38px, 13vw, 48px);
-    height: 54px;
-    padding: 5px;
-    border-radius: 8px;
+    width: 65px;
+    height: 75px;
+    padding: 8px;
+    border-radius: 10px;
   }
   
   .techstack-item img {
-    width: 20px;
-    height: 20px;
+    width: 26px;
+    height: 26px;
   }
   
   .techstack-item span {
-    font-size: 7px;
-    max-width: 44px;
-    margin-top: 3px;
+    font-size: 8px;
+    max-width: 55px;
+    margin-top: 6px;
   }
 }
 
@@ -252,11 +256,12 @@
   }
 
   .techstack-row {
-    gap: 5px;
+    gap: 6px;
   }
 
   .techstack-item {
-    width: 38px;
-    padding: 4px;
+    width: 58px;
+    height: 70px;
+    padding: 6px;
   }
 }

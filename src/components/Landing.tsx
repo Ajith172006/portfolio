@@ -1,43 +1,84 @@
 import { PropsWithChildren } from "react";
 import "./styles/Landing.css";
 import { usePortfolio } from "../context/PortfolioProvider";
+import { FaGithub, FaLinkedinIn, FaInstagram, FaEnvelope } from "react-icons/fa";
 
 const Landing = ({ children }: PropsWithChildren) => {
   const { portfolio } = usePortfolio();
+  
+  // Split name: "Ajith" and "S"
   const nameParts = portfolio.developer.fullName.split(" ");
   const firstName = nameParts[0] || portfolio.developer.name;
   const lastName = nameParts.slice(1).join(" ") || "";
-  const titleParts = portfolio.developer.title.split(" ");
-  const titleLastWord = titleParts.pop() || "";
-  const titleLead = titleParts.join(" ") || titleLastWord;
-  const titleTail = titleLead === titleLastWord ? "" : titleLastWord;
 
   return (
     <>
       <div className="landing-section" id="landingDiv">
         <div className="landing-container">
+          
+          {/* Left Side: Name and Socials */}
           <div className="landing-intro">
-            <h2>Hello! I'm</h2>
-            <h1>
-              {firstName.toUpperCase()}
-              {' '}
-              <br />
-              {lastName && <span>{lastName.toUpperCase()}</span>}
-            </h1>
+            <div className="landing-intro-header">
+              <span className="hello-tag">HELLO!</span>
+              <span className="im-tag">I'M</span>
+            </div>
+            
+            <h1 className="name-title name-first">{firstName.toUpperCase()}</h1>
+            <div className="name-last-row">
+              <h1 className="name-title name-last">{lastName.toUpperCase()}</h1>
+              <div className="landing-divider"></div>
+            </div>
+            
+            <p className="landing-desc">
+              Passionate Full Stack Developer who loves building innovative and scalable web applications.
+            </p>
+            
+            <div className="landing-socials">
+              <a href={portfolio.contact.github} target="_blank" rel="noreferrer" aria-label="GitHub">
+                <FaGithub />
+              </a>
+              <a href={portfolio.contact.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn">
+                <FaLinkedinIn />
+              </a>
+              <a href="https://instagram.com" target="_blank" rel="noreferrer" aria-label="Instagram">
+                <FaInstagram />
+              </a>
+              <a href={`mailto:${portfolio.contact.email}`} aria-label="Email">
+                <FaEnvelope />
+              </a>
+            </div>
           </div>
+
+          {/* Right Side: Role and Actions */}
           <div className="landing-info">
-            <h3>A</h3>
-            <h2 className="landing-info-h2">
-              <div className="landing-h2-1">{titleLead}</div>
-            </h2>
-            <h2>
-              <div className="landing-h2-info">{titleTail}</div>
-            </h2>
+            <div className="landing-info-header">
+              <span className="a-tag">A</span>
+              <div className="landing-divider"></div>
+            </div>
+            
+            <h1 className="role-title role-blue">FULL</h1>
+            <h1 className="role-title role-white">STACK</h1>
+            <h1 className="role-title role-white">DEVELOPER</h1>
+            
+            <p className="landing-desc">
+              I build responsive, user-friendly, and performance-driven web applications.
+            </p>
+            
+            <div className="landing-ctas">
+              <a href="#work" className="btn-primary" data-cursor="disable">
+                VIEW MY WORK <span className="arrow">→</span>
+              </a>
+              <a href="#contact" className="btn-secondary" data-cursor="disable">
+                CONTACT ME
+              </a>
+            </div>
           </div>
-          {/* Mobile photo - shows only on mobile when 3D character is hidden */}
+
+          {/* Mobile Photo layout */}
           <div className="mobile-photo">
             <img src={portfolio.developer.portraitImage} alt={portfolio.developer.fullName} />
           </div>
+
         </div>
         {children}
       </div>

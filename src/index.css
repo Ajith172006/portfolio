@@ -1,7 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Metal+Mania&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Metal+Mania&family=Outfit:wght@300;400;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap");
 
 :root {
-  font-family: "Metal Mania", fantasy;
+  font-family: "Plus Jakarta Sans", sans-serif;
 
   font-optical-sizing: auto;
   font-style: normal;
@@ -52,13 +52,13 @@ button,
 input,
 textarea,
 select {
-  font-family: "Metal Mania", fantasy;
+  font-family: "Plus Jakarta Sans", sans-serif;
 }
 
 a[href^="mailto:"],
 input[type="email"],
 .navbar-connect {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Plus Jakarta Sans", sans-serif;
 }
 
 body {
@@ -245,3 +245,133 @@ svg {
     font-size: 40px;
   }
 }
+
+/* Glassmorphism Card style */
+.glass-card {
+  background: rgba(10, 22, 48, 0.4);
+  backdrop-filter: blur(16px) saturate(120%);
+  -webkit-backdrop-filter: blur(16px) saturate(120%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card:hover {
+  background: rgba(10, 22, 48, 0.55);
+  border-color: rgba(255, 54, 93, 0.3);
+  box-shadow: 0 12px 40px 0 rgba(255, 54, 93, 0.15);
+  transform: translateY(-5px) scale(1.01);
+}
+
+/* Floating Ambient Blur Blobs */
+.bg-blobs-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.bg-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: 0.15;
+  mix-blend-mode: screen;
+  animation: float-blob 20s infinite alternate ease-in-out;
+}
+
+.blob-pink {
+  width: 500px;
+  height: 500px;
+  background: var(--accentColor);
+  top: 10%;
+  right: -5%;
+  animation-duration: 25s;
+}
+
+.blob-blue {
+  width: 600px;
+  height: 600px;
+  background: var(--blueColor);
+  bottom: -10%;
+  left: -5%;
+  animation-duration: 30s;
+  animation-delay: -5s;
+}
+
+.blob-purple {
+  width: 400px;
+  height: 400px;
+  background: #a855f7;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation-duration: 35s;
+  animation-delay: -10s;
+}
+
+@keyframes float-blob {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(30px, -50px) scale(1.1);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.95);
+  }
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 13px 28px;
+  background: linear-gradient(135deg, var(--blueColor) 0%, var(--accentColor) 100%);
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 30px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(47, 128, 255, 0.3);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 54, 93, 0.4);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 13px 28px;
+  background: transparent;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 30px;
+  text-decoration: none;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  border-color: var(--accentColor);
+  background: rgba(255, 54, 93, 0.08);
+  transform: translateY(-2px);
+}
+
+

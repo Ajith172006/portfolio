@@ -74,6 +74,7 @@ const PhotoHero = () => {
         style={{ pointerEvents: "none" }}
       >
         <div className="character-rim character-loaded-rim"></div>
+        <div className="photo-circle-ring"></div>
         <img
           src={portfolio.developer.portraitImage}
           alt={portfolio.developer.fullName}

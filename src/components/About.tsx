@@ -5,11 +5,20 @@ const About = () => {
   const { portfolio } = usePortfolio();
   return (
     <div className="about-section" id="about">
-      <div className="about-me">
-        <h3 className="title">{portfolio.about.title}</h3>
-        <p className="para">
-          {portfolio.about.description}
-        </p>
+      <div className="about-box">
+        <h2 className="title">
+          W<span className="bout-h2">HO</span>
+          <div>
+            &nbsp;AM<span className="me-h2"> I</span>
+          </div>
+        </h2>
+      </div>
+      <div className="about-box">
+        <div className="about-content">
+          <p className="para">
+            {portfolio.about.description}
+          </p>
+        </div>
       </div>
     </div>
   );

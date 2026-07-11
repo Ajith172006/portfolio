@@ -53,6 +53,11 @@ const MainContainer = () => {
 
   return (
     <div className="container-main">
+      <div className="bg-blobs-container">
+        <div className="bg-blob blob-pink"></div>
+        <div className="bg-blob blob-blue"></div>
+        <div className="bg-blob blob-purple"></div>
+      </div>
       <Cursor />
       <Navbar />
       <SocialIcons />
