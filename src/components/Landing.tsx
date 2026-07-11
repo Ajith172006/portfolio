@@ -1,7 +1,6 @@
 import { PropsWithChildren } from "react";
 import "./styles/Landing.css";
 import { usePortfolio } from "../context/PortfolioProvider";
-import { FaGithub, FaLinkedinIn, FaInstagram, FaEnvelope } from "react-icons/fa";
 
 const Landing = ({ children }: PropsWithChildren) => {
   const { portfolio } = usePortfolio();
@@ -33,20 +32,6 @@ const Landing = ({ children }: PropsWithChildren) => {
               Passionate Full Stack Developer who loves building innovative and scalable web applications.
             </p>
             
-            <div className="landing-socials">
-              <a href={portfolio.contact.github} target="_blank" rel="noreferrer" aria-label="GitHub">
-                <FaGithub />
-              </a>
-              <a href={portfolio.contact.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn">
-                <FaLinkedinIn />
-              </a>
-              <a href="https://instagram.com" target="_blank" rel="noreferrer" aria-label="Instagram">
-                <FaInstagram />
-              </a>
-              <a href={`mailto:${portfolio.contact.email}`} aria-label="Email">
-                <FaEnvelope />
-              </a>
-            </div>
           </div>
 
           {/* Right Side: Role and Actions */}
