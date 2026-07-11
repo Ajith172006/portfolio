@@ -276,6 +276,18 @@ svg {
   overflow: hidden;
 }
 
+.bg-blobs-container::before {
+  content: "";
+  position: absolute;
+  inset: -20%;
+  background:
+    radial-gradient(circle at 20% 30%, rgba(255, 54, 93, 0.14), transparent 32%),
+    radial-gradient(circle at 80% 20%, rgba(47, 128, 255, 0.16), transparent 30%),
+    radial-gradient(circle at 60% 85%, rgba(168, 85, 247, 0.12), transparent 34%);
+  filter: blur(35px);
+  animation: background-drift 24s ease-in-out infinite alternate;
+}
+
 .bg-blob {
   position: absolute;
   border-radius: 50%;
@@ -330,6 +342,25 @@ svg {
   }
 }
 
+@keyframes background-drift {
+  0% {
+    transform: translate3d(-3%, -2%, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(2%, 3%, 0) scale(1.08);
+  }
+  100% {
+    transform: translate3d(-1%, 1%, 0) scale(1.02);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bg-blobs-container::before,
+  .bg-blob {
+    animation: none;
+  }
+}
+
 .btn-primary {
   display: inline-flex;
   align-items: center;
@@ -373,5 +404,3 @@ svg {
   background: rgba(255, 54, 93, 0.08);
   transform: translateY(-2px);
 }
-
-
