@@ -21,10 +21,11 @@
 }
 
 .what-box h2 {
-  font-size: calc(4vw + 25px);
-  line-height: calc(4vw + 20px);
+  text-align: center;
+  font-size: calc(5vw + 35px);
+  line-height: calc(5vw + 30px);
   font-weight: 600;
-  margin-right: 10%;
+  margin-right: 0;
   margin-bottom: 100px;
 }
 
@@ -75,8 +76,9 @@
 }
 
 .what-content p {
-  font-size: 14px;
-  line-height: 18px;
+  font-size: 24px;
+  line-height: 1.85;
+  word-spacing: 8px;
   font-weight: 200;
   letter-spacing: 0.7px;
 }
@@ -316,6 +318,12 @@
   }
 }
 
+@media only screen and (min-width: 901px) {
+  .what-box:first-child {
+    justify-content: center;
+  }
+}
+
 @media only screen and (max-width: 1400px) {
   .what-box-in {
     margin-left: 50px;
@@ -344,7 +352,8 @@
   }
 
   .what-content p {
-    font-size: 14px;
+    font-size: 18px;
+    word-spacing: 5px;
   }
 
   .what-noTouch:hover,
@@ -415,7 +424,8 @@
   }
 
   .what-content p {
-    font-size: 11px;
+    font-size: 13px;
+    word-spacing: 3px;
   }
 
   .what-noTouch:hover,
@@ -481,6 +491,7 @@
   .what-content p {
     font-size: 12px;
     line-height: 1.45;
+    word-spacing: 2px;
   }
 
   .what-content h5,
