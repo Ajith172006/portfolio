@@ -17,6 +17,7 @@
 .about-box {
   width: 50%;
   display: flex;
+  align-items: flex-end;
   justify-content: center;
   position: relative;
   z-index: 9;
@@ -49,6 +50,14 @@
   color: var(--accentColor);
 }
 
+.me-h2 .split-line {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 100px;
+}
+
 .about-content {
   width: 580px;
   max-width: 100%;
@@ -69,6 +78,7 @@
 }
 
 .about-content p.para {
+  text-align: left;
   font-size: 18px;
   line-height: 1.85;
   font-weight: 400;
