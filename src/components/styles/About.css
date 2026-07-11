@@ -80,8 +80,9 @@
 
 .about-content p.para {
   text-align: left;
-  font-size: 18px;
+  font-size: 24px;
   line-height: 1.85;
+  word-spacing: 8px;
   font-weight: 400;
   color: var(--mutedText);
   margin: 0;
@@ -99,7 +100,8 @@
   }
 
   .about-content p.para {
-    font-size: 14px;
+    font-size: 18px;
+    word-spacing: 5px;
   }
 }
 
@@ -158,5 +160,6 @@
   .about-content p.para {
     font-size: 13px;
     line-height: 1.6;
+    word-spacing: 3px;
   }
 }
