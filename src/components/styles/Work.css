@@ -321,6 +321,13 @@
     gap: 0;
   }
 
+  .work-flex::before,
+  .work-flex::after {
+    width: 100%;
+    left: 0;
+    transform: none;
+  }
+
   .work-box {
     width: 100%;
     max-width: 100%;

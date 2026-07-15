@@ -232,17 +232,18 @@
     flex-direction: column;
     gap: 10px;
     margin-bottom: 70px;
+    margin-left: 25px;
   }
 
   .career-info-in,
   .career-info-box p {
     width: 100%;
-    padding-left: 10%;
+    padding-left: 0;
     box-sizing: border-box;
   }
 
   .career-timeline {
-    left: 0%;
+    left: 5px;
   }
 
   .career-container {
@@ -281,7 +282,7 @@
 
   .career-info-in,
   .career-info-box p {
-    padding-left: 5%;
+    padding-left: 0;
   }
 
   .career-section {

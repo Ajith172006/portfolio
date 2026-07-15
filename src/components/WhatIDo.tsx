@@ -37,11 +37,8 @@ const WhatIDo = () => {
   return (
     <div className="whatIDO">
       <div className="what-box">
-        <h2 className="title">
-          W<span className="hat-h2">HAT</span>
-          <div>
-            <span className="i-h2">&nbsp;I</span><span className="do-h2"> DO</span>
-          </div>
+        <h2 className="title" style={{ whiteSpace: "nowrap" }}>
+          W<span className="hat-h2">HAT</span> <span className="i-h2">I</span><span className="do-h2"> DO</span>
         </h2>
       </div>
       <div className="what-box">

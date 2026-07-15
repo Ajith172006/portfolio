@@ -107,7 +107,7 @@ export default function setSplitText() {
 
   titles.forEach((title: ParaElement) => {
     title.split = new TextSplitter(title, {
-      type: "chars,lines",
+      type: "chars,words,lines",
       linesClass: "split-line",
     });
 

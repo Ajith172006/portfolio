@@ -5,7 +5,11 @@ import { lenis } from "../Navbar";
 
 gsap.registerPlugin(ScrollTrigger);
 
+let initialFXRun = false;
+
 export function initialFX() {
+  if (initialFXRun) return;
+  initialFXRun = true;
   document.body.style.overflowY = "auto";
   if (lenis) {
     lenis.start();

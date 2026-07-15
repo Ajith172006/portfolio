@@ -1,7 +1,15 @@
 .section-container {
   width: 1300px;
 }
-.title,
+.title {
+  font-kerning: normal;
+  -webkit-text-rendering: optimizeLegibility;
+  text-rendering: optimizeLegibility;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  word-spacing: 0.15em;
+  white-space: nowrap;
+}
 .para {
   font-kerning: normal;
   -webkit-text-rendering: optimizeLegibility;

@@ -6,15 +6,12 @@ const About = () => {
   return (
     <div className="about-section" id="about">
       <div className="about-box">
-        <h2 className="title">
-          W<span className="bout-h2">HO</span>
-          <div>
-            &nbsp;AM<span className="me-h2"> I</span>
-          </div>
+        <h2 className="title" style={{ whiteSpace: "nowrap" }}>
+          W<span className="bout-h2">HO</span> AM<span className="me-h2"> I</span>
         </h2>
       </div>
       <div className="about-box">
-        <div className="about-content">
+        <div className="about-content about-me">
           <p className="para">
             {portfolio.about.description}
           </p>

@@ -21,12 +21,14 @@
 }
 
 .what-box h2 {
+  width: 100%;
   text-align: center;
   font-size: calc(5vw + 35px);
   line-height: calc(5vw + 30px);
   font-weight: 600;
   margin-right: 0;
   margin-bottom: 100px;
+  white-space: nowrap;
 }
 
 .hat-h2 {
@@ -390,12 +392,15 @@
 @media only screen and (max-width: 900px) {
   .whatIDO {
     flex-direction: column;
+    height: auto;
+    min-height: auto;
   }
 
   .what-box h2 {
     margin: 50px 0;
     font-size: clamp(42px, 12vw, 55px);
     line-height: 0.96;
+    white-space: normal !important;
   }
 
   .what-box:first-child {

@@ -48,7 +48,7 @@
   color: var(--accentColor);
   font-weight: 700;
   font-size: 14px;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
 }
 
 .im-tag {
@@ -56,7 +56,7 @@
   color: rgba(255, 255, 255, 0.6);
   font-weight: 600;
   font-size: 14px;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
 }
 
 /* Name text styling */
@@ -153,10 +153,10 @@
 /* Right Side Layout (Role Info) */
 .landing-info {
   position: absolute;
-  right: 2vw;
+  right: 6vw;
   top: 50%;
   transform: translateY(-50%);
-  width: 30vw;
+  width: 32vw;
   max-width: 480px;
   text-align: left;
   z-index: 10;
@@ -186,10 +186,11 @@
 .role-title {
   margin: 0;
   font-family: "Lora", serif !important;
-  font-size: clamp(38px, 4.5vw, 76px);
+  font-size: clamp(28px, 3.4vw, 64px);
   font-weight: 700;
   line-height: 0.95;
   letter-spacing: -1px;
+  white-space: nowrap;
 }
 
 .role-blue {
@@ -381,7 +382,7 @@
 
   .name-title {
     text-align: center;
-    font-size: clamp(42px, 12vw, 64px);
+    font-size: clamp(36px, 10vw, 52px);
   }
 
   .name-last-row {
@@ -495,7 +496,7 @@
 
   .role-title {
     text-align: center;
-    font-size: clamp(42px, 12vw, 64px);
+    font-size: clamp(32px, 9vw, 48px);
   }
 
   .landing-ctas {

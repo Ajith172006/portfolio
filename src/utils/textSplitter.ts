@@ -27,6 +27,10 @@ export class TextSplitter {
     this.elements = elements;
 
     elements.forEach((element) => {
+      // If the element has already been split, restore its plain text content first
+      if (element.querySelector(".split-char, .split-word, .split-line")) {
+        element.innerHTML = element.textContent || "";
+      }
       // Store original HTML for revert
       this.originalHTML.set(element, element.innerHTML);
 
@@ -96,7 +100,11 @@ export class TextSplitter {
   private splitLines(element: Element, linesClass: string) {
     // Use requestAnimationFrame to ensure layout is complete
     requestAnimationFrame(() => {
-      const items = element.querySelectorAll(".split-word, .split-char");
+      let itemsList = element.querySelectorAll(".split-word");
+      if (itemsList.length === 0) {
+        itemsList = element.querySelectorAll(".split-char");
+      }
+      const items = Array.from(itemsList);
       if (items.length === 0) return;
 
       let currentLine: Element[] = [];
@@ -133,9 +141,12 @@ export class TextSplitter {
         lineWrapper.style.display = "block";
         const firstItem = line[0];
         firstItem.parentNode?.insertBefore(lineWrapper, firstItem);
-        line.forEach((item) => {
+        line.forEach((item, index) => {
           if (item.parentNode === lineWrapper.parentNode) {
             lineWrapper.appendChild(item);
+            if (index < line.length - 1) {
+              lineWrapper.appendChild(document.createTextNode(" "));
+            }
           }
         });
       });

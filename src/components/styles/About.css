@@ -35,28 +35,64 @@
 }
 
 .about-box h2.title {
+  width: 100%;
   text-align: center;
   font-size: calc(5vw + 35px);
   line-height: calc(5vw + 30px);
   font-weight: 600;
   margin-right: 0;
   margin-bottom: 50px;
+  white-space: nowrap;
 }
 
-.bout-h2 {
-  font-style: italic;
+/* Styling for WHO (Word 1) - Red Gradient + Glitter */
+.about-box h2.title .split-word:nth-of-type(1) .split-char {
+  background: linear-gradient(120deg, #ff0055, #ff5000, #ff00a0, #ff0055) !important;
+  background-size: 200% auto !important;
+  background-clip: text !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  color: transparent !important;
+  animation: glitterShimmer 2.5s linear infinite !important;
+  font-style: italic !important;
 }
 
-.me-h2 {
-  color: var(--accentColor);
+/* Styling for AM (Word 2) - Yellow Gradient + Glitter */
+.about-box h2.title .split-word:nth-of-type(2) .split-char {
+  background: linear-gradient(120deg, #ffcc00, #ff8000, #ffe600, #ffcc00) !important;
+  background-size: 200% auto !important;
+  background-clip: text !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  color: transparent !important;
+  animation: glitterShimmer 2.5s linear infinite !important;
 }
 
-.me-h2 .split-line {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: 100px;
+/* Styling for I (Word 3) - Green Gradient + Glitter */
+.about-box h2.title .split-word:nth-of-type(3) .split-char {
+  background: linear-gradient(120deg, #00c853, #00f2fe, #a8ff78, #00c853) !important;
+  background-size: 200% auto !important;
+  background-clip: text !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  color: transparent !important;
+  animation: glitterShimmer 2.5s linear infinite !important;
+}
+
+/* Keyframes for shimmers */
+@keyframes glitterShimmer {
+  0% {
+    background-position: 0% 50%;
+    filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.1)) brightness(1);
+  }
+  50% {
+    background-position: 100% 50%;
+    filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.4)) brightness(1.25);
+  }
+  100% {
+    background-position: 0% 50%;
+    filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.1)) brightness(1);
+  }
 }
 
 .about-content {
@@ -82,7 +118,7 @@
   text-align: left;
   font-size: 24px;
   line-height: 1.85;
-  word-spacing: 8px;
+  word-spacing: 12px;
   font-weight: 400;
   color: var(--mutedText);
   margin: 0;
@@ -120,6 +156,8 @@
   .about-section {
     flex-direction: column;
     padding: 60px 0;
+    height: auto;
+    min-height: auto;
   }
 
   .about-box h2.title {
@@ -127,6 +165,7 @@
     font-size: clamp(42px, 12vw, 55px);
     line-height: 0.96;
     text-align: center;
+    white-space: normal !important;
   }
 
   .about-box {
@@ -150,7 +189,7 @@
 
   .about-box {
     max-width: calc(100% - 25px);
-    margin: 0;
+    margin: 0 auto;
   }
 
   .about-content {
