@@ -111,7 +111,10 @@ const Contact = () => {
     if (isConfigured) {
       const templateParams = {
         from_name: formData.name,
+        name: formData.name,
         from_email: formData.email,
+        email: formData.email,
+        reply_to: formData.email,
         message: formData.message,
         to_name: portfolio.developer.fullName,
       };
